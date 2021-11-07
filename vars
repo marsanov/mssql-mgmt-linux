@@ -1,0 +1,13 @@
+MASSIV=($(ls -a ./bd_config/))
+unset MASSIV[0]
+unset MASSIV[1]
+i=1
+g=2
+while [ $i -le ${#MASSIV[@]} ]
+do
+  source ./bd_config/${MASSIV[g]}
+  echo "$i. $NAME"
+  echo " "
+  ((g++))
+  ((i++))
+done
